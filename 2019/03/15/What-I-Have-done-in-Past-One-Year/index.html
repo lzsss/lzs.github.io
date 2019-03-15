@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>What I Have done in Past One Year</title>
+	<title>What I Have done for my research in past one year</title>
 	<meta name="keywords" content="" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -31,7 +31,7 @@
 
 
 
-<h2 class="title">What I Have done in Past One Year</h2>
+<h2 class="title">What I Have done for my research in past one year</h2>
 <div style="margin-top: -10px;">
         
 <script src="/js/util.js"></script>
@@ -43,7 +43,21 @@
     }
 </script> 
 
-
+<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Beginning"><span class="toc-text">Beginning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pre-Study-March-2018-April-2018"><span class="toc-text">Pre-Study (March 2018 - April 2018)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pressure-Velocity-May-2018-August-2018"><span class="toc-text">Pressure - Velocity (May 2018 - August 2018)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Completion-of-torch-area-September-2018-January-2019"><span class="toc-text">Completion of torch area (September 2018 - January 2019)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Enlage-the-calculation-area-January-2019-March-2019"><span class="toc-text">Enlage the calculation area (January 2019 - March 2019)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
+<p>Last one year, there are many stuff happened on me, in study and life. Some of them are interesting, some are a little hard. Here, just record for them as ending. Then start again and make things done better. </p>
+<h4 id="Beginning"><a href="#Beginning" class="headerlink" title="Beginning"></a>Beginning</h4><p>Before the extrance examination of master course, Prof. W asked me which topic I prefer to do. I told him numerical analysis. This shocked everyone in our lab. At that time, only a M2 student did numerical analysis. He worded so hard, unfortunately his programm could not converge. He had done study of numerical analysis from B4, which means 3 years but nothing. The reason I chose it not that I like it so much, but I totally do not like the research of material at all. A large amount of research of this area is pseudoscience I think. They are more similar to cooking. </p>
+<p>Anyway, I chose the hardest topic in my lab and begin the master course.</p>
+<h4 id="Pre-Study-March-2018-April-2018"><a href="#Pre-Study-March-2018-April-2018" class="headerlink" title="Pre-Study (March 2018 - April 2018)"></a>Pre-Study (March 2018 - April 2018)</h4><p>After the extrance examination, I start to learn basic knowledge of numerical analysis. First of all, the most important thing is programming. During the March, I had been reading a book of C programming, <em>C Primer Plus</em>. I was not totally understand everything about C, but it is enough to use it as a tool in numerical analysis.</p>
+<p>Then the April, the month of Sakura. The new semester, also the first semester for me in Kyushu University. </p>
+<p>In April, I have been reading <em>Numerical Heat Transfer and Fluid Flow</em> written by <a href="URL" title="https://en.wikipedia.org/wiki/Suhas_Patankar">Suhas Patankar</a>. This book is the Bible for CFD. From this book, I could find everything I need for my research like how to divide the continous calculation area into grids, how to deal with the boundary and the algorithum. I really respect the author Prof. Patankar from the bottom of my heart. </p>
+<h4 id="Pressure-Velocity-May-2018-August-2018"><a href="#Pressure-Velocity-May-2018-August-2018" class="headerlink" title="Pressure - Velocity (May 2018 - August 2018)"></a>Pressure - Velocity (May 2018 - August 2018)</h4><p>Fllowing the sugguestion from 先輩, I dicided to write the programm from zero by myself, not using his program.<br>I used 3 months to draw the grids, think of the implements of binary and finish the demo of algorithum which can solve the pressure and velocity equations. </p>
+<p>The beginning is always tough. Without enough practicing of programming, facing to a strange topic, what I could do is to spend all my time on dividing the equations of plasma fluid, reading papers and the source code from OB. I must say, the source code is disaster. Over 8000 lines C code in a file without any comment. Some variables are named by abbreviation of Japanese. Due to no global variable, some function has 9 or 10 parameters. I do not want to judge it in terms of software engineering, just describe the fact. </p>
+<p>Anyway, after struggling with it, I understand the program totally. Basiclly there is no big mistake in this program, so I referred to it to write my program.<br>Luckily, the solution of pressure and velocity field in torch area is finished before the last seminar in that semester. </p>
+<h4 id="Completion-of-torch-area-September-2018-January-2019"><a href="#Completion-of-torch-area-September-2018-January-2019" class="headerlink" title="Completion of torch area (September 2018 - January 2019)"></a>Completion of torch area (September 2018 - January 2019)</h4><p>The pressure and velocity is the most basic equations. The electromagnetic and energy equations are also needed to simulate the induction thermal plasma. </p>
+<p>In the summer vacation, I went back to China. Using this period of time, I completed the electrimanetic equation part. </p>
+<p>Then the energy equation is added to the program. Things got more complex. The transport properties like density/viscosity will changed as a function of temperature. The program is not so easy converge like it before. After trying any method that I can (I even used Python&amp;matplotlib to write a program for monitoring the mass generation which could show if it is convergence), I decided to ask Prof.W for some advices. He told me some tricks for numerical analysis of induction thermal plasma which are very useful, especially about the iteration factors. Followed these advices, the program ran much well than before. However, it could not converge at all. So where is the problem? Why it could not be convergence? I got very confused. I t was November. I have finished the program for over one month and run it time by time from morning to night. I thought the problem maybe exsit in 3 area. First, program, initial condition (like temperature, the inial value is very important) and iteration factors. Then I dicided go back to compare the algorithum and program with each line. Finally I found it before the end of 2018. Before 2019, my program was eventually converged.</p>
+<h4 id="Enlage-the-calculation-area-January-2019-March-2019"><a href="#Enlage-the-calculation-area-January-2019-March-2019" class="headerlink" title="Enlage the calculation area (January 2019 - March 2019)"></a>Enlage the calculation area (January 2019 - March 2019)</h4><p>Then after the success of the calculation of torch area, Prof. W and I dicided to simulate the nanoparticle synthesis process in the induction thermal plasma equipment. So next step was to enlarge the calculation area to whole equation. This is not difficult but a little complex. The grid need to draw and the boundary conditions need to reset. Although there was some problems, they were solved finally. I got the result for the whole area.</p>
+<h4 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h4><p>Although it looks very easy today, it is really a touch period when the program failed time by time, day by day and I did not know the reason. Luckily, I complete it. And I will do better in my M2 year. I hope I could complete this program before graduation. One more thing, I will definitly leave enough comments in this program and a tutorial for someone who will use it. :)</p>
 
 </div>
 
