@@ -71,9 +71,6 @@ img {
 hr {
   color: LightGrey;
 }
-p {
-  text-indent: 2em;
-}
 table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   width: 100%;
@@ -101,15 +98,16 @@ table tr:nth-child(odd) {
   background: #f4f4f4;
 }
 .toc a {
-  color: #000;
+  color: #666;
+/*black*/
   border-bottom: none;
 }
 .toc a:hover {
-  color: #000;
+  color: #666;
   border-bottom: none;
 }
 .toc-item {
-  color: #000;
+  color: #666;
   border-bottom: none;
 }
 .toc-item a:hover {
