@@ -1,0 +1,121 @@
+<html>
+<head>
+	
+	<title>The Solution of Nonlinear Equations with Two Variables Using Newton&#39;s Method</title>
+	<meta name="keywords" content="" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+	   <link href="/css/main.css?v=3" rel="stylesheet" type="text/css" />
+        <script src="/js/util.js"></script>
+        <script>
+            if(isMobile()) {
+                loadjscssfile('../../../../css/mobile.css', 'css');
+            } else {
+                loadjscssfile('../../../../css/desktop.css', 'css');
+            }
+        </script> 
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+    
+
+</head>
+
+<body>
+
+
+<h2 class="title">The Solution of Nonlinear Equations with Two Variables Using Newton&#39;s Method</h2>
+<div style="margin-top: -10px;">
+        
+<script src="/js/util.js"></script>
+<script>
+    if(isMobile()) {
+        loadjscssfile('../../../../css/mobile.css', 'css');
+    } else {
+        loadjscssfile('../../../../css/desktop.css', 'css');
+    }
+</script> 
+
+<p>Last year I used this method to help Saito-sann solve a problem in his research. Here just take a note.</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Numerical methods are used to approximate solutions of equations when exact solutions cannot be determined via algebraic methods. They construct successive approximations that converge to the exact solution of an equation or system of equations. One of the most famous methods is Newton’s Method. It could use to solve not only linear equations but also nonlinear equations which usually appear in physical simulation. Here, Newton’s method is utilized to give the numerical analysis of nonlinear equations with two variables. An example for calculating the concentration of a mixed gas (Lanthanum - Oxygen - Argon) with the ratio of 1:10:89 under a high temperature (3000 K to 7000K) is performed.</p>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>As we known, the Newton’s method for solving linear equation need to use the Taylor series. For two variables, the Taylor series of $f(x,y)$ is,<br>$$<br>\begin{align*}<br>f(x,y)&amp;=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)\<br>&amp;\qquad+\frac{1}{2}\left(f_{xx}(x_0,y_0)(x-x_0)^2+2f_{xy}(x_0,y_0)(x-x_0)(y-y_0)\right.\<br>&amp;\qquad\qquad\quad\left.+f_{yy}(x_0,y_0)(y-y_0)^2\right)\<br>&amp;\qquad\,\,\,\vdots\<br>&amp;\qquad+\frac{1}{n!}\left(f_{x^n}(x_0,y_0)(x-x_0)^n+\binom{n}{1}f_{x^{n-1}y}(x_0,y_0)(x-x_0)^{n-1}(y-y_0)\right.\<br>&amp;\qquad\qquad\quad+\cdots+f_{y^n}(x_0,y_0)(y-y_0)^n\Big)\<br>&amp;\qquad+R_n(x,y)</p>
+<p>\end{align*}<br>\tag{1}<br>$$<br>where,<br>$$<br>\begin{equation}<br>f_x(x,y) = \frac{\partial f(x,y)}{\partial x},\quad<br>f_{xy}(x,y) = f_{yx}(x,y) = \frac{\partial}{\partial x}(\frac{\partial f(x,y)}{\partial y})<br>= \frac{\partial}{\partial y}(\frac{\partial f(x,y)}{\partial x})<br>\end{equation}<br>\tag{2}<br>$$<br>The first approximation of Taylor series is<br>$$<br>\begin{equation}<br>z=f_{[1]}(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)<br>\end{equation}<br>\tag{3}<br>$$<br>Assume that the nonlinear equations with  two variables are,<br>$$<br>\begin{equation}<br>\begin{cases}<br>f(x,y)= 0\<br>g(x,y)=0\<br>\end{cases}<br>\end{equation}<br>\tag{4}<br>$$<br>Using Newton’s method,<br>$$<br>\begin{equation}<br>\begin{cases}<br>f_{[1]}(x,y)= f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)\<br>g_{[1]}(x,y)= g(x_0,y_0)+g_x(x_0,y_0)(x-x_0)+g_y(x_0,y_0)(y-y_0)\<br>\end{cases}<br>\end{equation}<br>\tag{5}<br>$$<br>So the numerical solution could be obtained by this equation,<br>$$<br>\begin{equation}<br>\begin{bmatrix}x_{k+1}\y_{k+1}\end{bmatrix}=<br>\begin{bmatrix}x_k\y_k\end{bmatrix}-<br>\frac{1}{\Delta(x_k,y_k)}<br>\begin{bmatrix}g_y(x_k,y_k)&amp;&amp;-f_y(x_k,y_k)\<br>-g_x(x_k,y_k)&amp;&amp; f_x(x_k,y_k)\end{bmatrix}<br>\begin{bmatrix}<br>f(x_k, y_k)\g(x_k, y_k)<br>\end{bmatrix}<br>\end{equation}<br>\tag{6}<br>$$<br>Here,<br>$$<br>\begin{equation}<br>\Delta(x_k, y_k)=f_x(x_k,y_k)g_y(x_k,y_k)-f_y(x_k,y_k)g_x(x_k,y_k)<br>\end{equation}<br>\tag{7}<br>$$<br>Therefore, by these equations the solution could be obtained. Steps of the program are,</p>
+<ul>
+<li>Step 1: When $k=1$, choose a optimum value $(x,y)=(x_1,y_1)$.</li>
+<li>Step 2: Using the equation 6 to get $(x_{k+1}, y_{k+1})$, such condition $|\Delta (x_k,y_k)|&gt;\epsilon_1$ must be met.</li>
+<li>Step3: The convergence condition is $|f(x_{k+1}, y_{k+1})|&lt;\epsilon_2$ and $|g(x_{k+1}, y_{k+1})|&lt;\epsilon_2$, $\epsilon_2$ is a small positive number.</li>
+<li>Step4: When $k&gt;k_{max}$ , the program could not converge.</li>
+</ul>
+<p>Based on Saha equation, ionization equation, reaction equation and other basic knowledge of chemical. Such equations exist.<br>$$<br>\begin{equation}<br>\begin{cases}<br>x_2 = z\<br>\frac{x_2 Z}{x_1}=C_1\<br>\frac{y_1^2}{y_2}=C_2\<br>x_1+x_2+x_3=C_3\<br>y_2+\frac{1}{2}y_1+\frac{1}{2}y_3=C_4\<br>x_1+x_2+x_3+y_1+y_2+y_3=C_5<br>\end{cases}<br>\end{equation}<br>\tag{8}<br>$$<br>Where $x_1, x_2,x_3, y_1,y_2,y_3, z$ stand for the concentration of $La, La^+,LaO, O, O_2, e^-$. $C_1, C_2,C_3,C_4,C_5,T$ stand for five constant number obtained from Saha equation and conditions and temperature. So from these equations,<br>$$<br>\begin{equation}<br>\begin{cases}<br>f(x,y) =\frac{y^2}{C_3} + 0.5y+0.5x-C_5\<br>g(x,y) =\frac{c_1x}{y} + \sqrt{\frac{C_2C_1x}{y}}+x-C_4\<br>\end{cases}<br>\tag{9}<br>\end{equation}<br>$$</p>
+<p>$$<br>\begin{equation}<br>\begin{cases}<br>f_x(x,y)=0.5\<br>f_y(x,y) =\frac{2}{C_3y}+0.5\quad\<br>\end{cases}<br>\begin{cases}<br>g_x(x,y)=\frac{C_1}{y}+0.5\sqrt{\frac{C_1C_2}{y}}x^{-0.5}+1\<br>g_y(x,y)=C_1x\log(y)-0.5\sqrt{C_1C_2y^{-1.5}}\<br>\end{cases}<br>\end{equation}<br>\tag{10}<br>$$</p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/Users/liuzs/Blog/source/_posts//Desktop/%E6%97%A0%E6%A0%87%E9%A2%98.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>T [K]</th>
+<th>La</th>
+<th>La+</th>
+<th>LaO</th>
+<th>O</th>
+<th>O2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.00E+03</td>
+<td>5.24E-08</td>
+<td>0.00E+00</td>
+<td>8.61E-02</td>
+<td>1.92E-01</td>
+<td>7.22E-01</td>
+</tr>
+<tr>
+<td>4.00E+03</td>
+<td>2.27E-05</td>
+<td>3.85E-05</td>
+<td>5.58E-02</td>
+<td>8.27E-01</td>
+<td>1.17E-01</td>
+</tr>
+<tr>
+<td>5.00E+03</td>
+<td>2.28E-03</td>
+<td>2.74E-03</td>
+<td>4.38E-02</td>
+<td>9.41E-01</td>
+<td>7.51E-03</td>
+</tr>
+<tr>
+<td>6.00E+03</td>
+<td>1.08E-02</td>
+<td>2.90E-02</td>
+<td>7.17E-03</td>
+<td>9.23E-01</td>
+<td>9.58E-04</td>
+</tr>
+<tr>
+<td>7.00E+03</td>
+<td>3.83E-03</td>
+<td>4.73E-02</td>
+<td>2.19E-04</td>
+<td>9.01E-01</td>
+<td>2.10E-04</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=&web_id=" language="JavaScript"></script>script>
+</div>
+
+
+
+
+</body>
+</html>

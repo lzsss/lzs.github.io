@@ -1,16 +1,22 @@
 <html>
 <head>
 	
-	<title>So long, and thanks for all the fish.</title>
+	<title></title>
 	<meta name="keywords" content="" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-        <link href="/css/home.css?v=3" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+	   <link href="/css/main.css?v=3" rel="stylesheet" type="text/css" />
+        <script src="/js/util.js"></script>
+        <script>
+            if(isMobile()) {
+                loadjscssfile('../../../../css/mobile.css', 'css');
+            } else {
+                loadjscssfile('../../../../css/desktop.css', 'css');
+            }
+        </script> 
     
 
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
@@ -71,24 +77,6 @@
 
                     
                     
-<li class="list-group-item title">
-    <a target="_blank" href="/2019/03/17/Numerical-Analysis-of-Induction-Thermal-Plasma-with-Chemically-Equilibrium-Model-for-Nanoparticle-Formation-Investigation/">Numerical Analysis of Induction Thermal Plasma with Chemically Equilibrium Model for Nanoparticle Formation Investigation</a>
-</li>
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2019/03/15/What-I-Have-done-in-Past-One-Year/">What I have done for my research in past one year</a>
-</li>
-
-                    
-                    
-<li class="list-group-item title">
-    <a target="_blank" href="/2019/02/06/The Solution of Nonlinear Equations with Two Variables Using Newton's Method/"></a>
-</li>
-
-                    
-                    
                 </ul>
             </div>
         </div>
@@ -102,8 +90,6 @@
 </div>
 
 
-
-<!--加载导航栏所需js文件-->
 
 
 </body>
